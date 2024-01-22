@@ -1,34 +1,39 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+Mottelson:
+  - firstname: ["Aske", "A."]
+    url: /people/mottelson
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+Rossi:
+  - firstname: ["Luca", "L."]
+    url: /people/rossi
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+Knudsen:
+  - firstname: ["Søren", "S."]
+    url: /people/knudsen
+    
+Mekler:
+  - firstname: ["Elisa D", "Elisa D.", "Elisa", "E."]
+    url: /people/mekler
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
-
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
-
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+Bennett:
+  - firstname: ["Dan", "Daniel"]
+    url: /people/bennett
+    
+Feng:
+  - firstname: ["Feng"]
+    url: /people/feng
+    
+Piitulainen:
+  - firstname: ["Roosa"]
+    url: /people/piitulainen
+    
+Iargina:
+  - firstname: ["Olga"]
+    url: /people/iargina
+    
+Arminio:
+  - firstname: ["Luigi"]
+    url: /people/arminio
+  
+Vornhagen:
+  - firstname: ["Jan B.", "Jan Benjamin", "Jan"]
+    url: /people/vornhagen

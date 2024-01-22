@@ -2,25 +2,107 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+description: Human-Centered Data Science @ IT University of Copenhagen.
+order: 10
 
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+#profile:
+#  align: right
+#  image: 081021 SK_1-crop_more.jpg
+#  address: >
+#    <p>4D22</p>
+#    <p>Rued Langgaards Vej 7</p>
+#    <p>DK-2300 Copenhagen S, Denmark</p>
 
-news: true # includes a list of news items
-latest_posts: true # includes a list of the newest posts
+news: false  # includes a list of news items
+people: false  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+The Human-Centered Data Science research group (HCDS) focuses on the human factors in the conception, use, and understanding of data. Positioned in the intersection of data science, social science, HCI, and CSCW we are interested in understanding and exploring human practices enabled by technology. We combine both quantitative and qualitative methods, and work with computational methods such as statistics, machine learning, network analysis together with qualitative methods such as ethnography, interviews, and observations.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Our research aims to contribute to often overlooked human-centered dimensions of data science such as individual differences, domain-expertise, design implications, and societal impact. Within HCDS, we work across several topics, including digital media platforms, information visualization, crowd sourcing, affective computing, behavioral modeling, and societal challenges related to digital infrastructure more broadly.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+<div class="news">
+  <h1>news</h1>
+  {% if site.news  %}
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+      {% assign news = site.news | reverse %}
+      {% for item in news limit: site.news_limit %}
+        <tr>
+          <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
+          <td>
+            {% if item.inline %}
+              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            {% else %}
+              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No news so far...</p>
+  {% endif %}
+</div>
+
+<div class="People">
+  <h1>People</h1>
+  {% if site.people  %}
+    <div class="container">
+      <!-- {% assign people = site.people | where: "group", "Faculty" | sort: "started" %} -->
+      {% assign people = site.people | where: "status", "Current" %}
+      {% for person in people limit: site.people_limit %}
+        {% assign remainder = forloop.index | modulo: 4 %}
+        {% if forloop.first == true %}
+          <div class="row">
+        {% elsif remainder == 4 %}
+          </div>
+          <div class="row">
+        {% endif %}
+
+        {% include person.liquid %}
+
+        {% if forloop.last %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+      {% assign people = site.people | reverse %}
+      {% for item in people limit: site.people_limit %}
+        <tr>
+          <th scope="row">{{ item.name }}</th>
+          <td>
+            {% if item.inline %}
+              {{ item.title | remove: '<p>' | remove: '</p>' | emojify }}
+            {% else %}
+              <a class="people-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div> -->
+  {% else %}
+    <p>No people so far...</p>
+  {% endif %}
+</div>
+<script type="text/javascript">
+// randomize order within each row
+var rows = document.getElementsByClassName('row')
+for(var i = 0; i < rows.length; i++) {
+  var row = rows[i]
+  for (var j = row.children.length; j >= 0; j--) {
+    row.appendChild(row.children[Math.random() * j | 0]);
+  }
+}
+</script>
+
+
+
+
